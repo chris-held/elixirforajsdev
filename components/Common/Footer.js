@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer>
+    <footer className="p-4">
       <a
         href="https://github.com/chris-held/elixirforajsdev/issues"
         target="_blank"
