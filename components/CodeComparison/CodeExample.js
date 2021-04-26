@@ -1,4 +1,4 @@
-const { a11yDark, CodeBlock } = require("react-code-blocks");
+const { a11yDark, CopyBlock } = require("react-code-blocks");
 
 const CodeExample = ({ code, language }) => {
   return (
@@ -6,7 +6,7 @@ const CodeExample = ({ code, language }) => {
       <p className="text-lg my-2">
         {language === "elixir" ? "Elixir" : "Javascript"}
       </p>
-      <CodeBlock
+      <CopyBlock
         showLineNumbers={false}
         text={code}
         language={language}
