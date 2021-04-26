@@ -23,6 +23,14 @@ export default function Home() {
       <Head>
         <title>Elixir for a JS Dev</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="keywords"
+          ccontent="elixir,javascript,web development,programming,react"
+        />
+        <meta
+          name="description"
+          content="Tools and examples to help a Javascript developer learn Elixir"
+        />
       </Head>
       <main className="m-auto p-4 max-w-4xl flex flex-col h-screen">
         <Header />
