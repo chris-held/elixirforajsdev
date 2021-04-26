@@ -1,5 +1,15 @@
 import Head from "next/head";
-import { elixirFunction, elixirImports, jsFunction } from "../codeSamples";
+import {
+  elixirFilter,
+  elixirFunction,
+  elixirImports,
+  elixirMap,
+  elixirReduce,
+  jsFilter,
+  jsFunction,
+  jsMap,
+  jsReduce,
+} from "../codeSamples";
 import CodeComparison from "../components/CodeComparison/CodeComparison";
 import CodeComparisonDescription from "../components/CodeComparison/CodeComparisonDescription";
 import CodeComparisonHeader from "../components/CodeComparison/CodeComparisonHeader";
@@ -49,40 +59,17 @@ export default function Home() {
           </Collabsible>
           <Collabsible title="Common List Operations">
             <>
-              <CodeComparisonHeader>Coming Soon!</CodeComparisonHeader>
-              {/* <CodeComparisonHeader>Map</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" />
+              <CodeComparisonHeader>Map</CodeComparisonHeader>
+              <CodeComparison js={jsMap} elixir={elixirMap} />
               <CodeComparisonHeader>Filter</CodeComparisonHeader>
-              <CodeComparison
-                js={`
-                const foo = 1; 
-                const bar = 2;
-                `}
-                elixir="foo = 1"
-              />
-              <CodeComparisonHeader>Some</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" />
+              <CodeComparison js={jsFilter} elixir={elixirFilter} />
               <CodeComparisonHeader>Reduce</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" /> */}
+              <CodeComparison js={jsReduce} elixir={elixirReduce} />
             </>
           </Collabsible>
           <Collabsible title="Async Tasks">
             <>
               <CodeComparisonHeader>Coming Soon!</CodeComparisonHeader>
-              {/* <CodeComparisonHeader>Map</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" />
-              <CodeComparisonHeader>Filter</CodeComparisonHeader>
-              <CodeComparison
-                js={`
-                const foo = 1; 
-                const bar = 2;
-                `}
-                elixir="foo = 1"
-              />
-              <CodeComparisonHeader>Some</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" />
-              <CodeComparisonHeader>Reduce</CodeComparisonHeader>
-              <CodeComparison js="const foo = 1;" elixir="foo = 1" /> */}
             </>
           </Collabsible>
         </div>
