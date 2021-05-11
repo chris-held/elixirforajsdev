@@ -97,7 +97,7 @@ export const jsReduce = `
 
 export const jsChaining = `
  const people = [{name: 'Bob', age: 30}, {nane: 'Bill', age: 18}];
- const filteredAndMapped = people.filter({age} => age > 21).amp({name} => name);
+ const filteredAndMapped = people.filter({age} => age > 21).map({name} => name);
 
  // ['Bob']
 
@@ -219,7 +219,7 @@ export const elixirIf = `
  else
   100
  end 
- 
+
  # ternary isn't really directly supported, but this version of
  # an if statement is one line and very easy to read
  if n > 100, do: 100, else: n
