@@ -18,6 +18,21 @@ export const elixirVars = `
 
 `;
 
+export const jsComparisonOperators = `
+ "hi" = "hi"   # Uncaught SyntaxError: Invalid left-hand side in assignment
+ "hi" == "hi"  # true
+ "hi" === "hi" # true
+
+`;
+
+export const elixirComparisonOperators = `
+ "hi" = "hi"
+ "hello" = "hi"   # ** (MatchError) no match of right hand side value: "hi"
+ "hi" == "hi"    # true
+ "hello" == "hi"  # false
+
+`;
+
 export const jsImports = `
  import React, { useState } from 'react';
 
@@ -54,7 +69,7 @@ export const elixirFunction = `
  defp private_add(n1, n2) do
   n1 + n2
  end
- 
+
 `;
 
 export const elixirMap = `
@@ -218,7 +233,7 @@ export const elixirIf = `
   n
  else
   100
- end 
+ end
 
  # ternary isn't really directly supported, but this version of
  # an if statement is one line and very easy to read

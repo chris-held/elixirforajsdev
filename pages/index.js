@@ -11,6 +11,7 @@ import {
   elixirMap,
   elixirReduce,
   elixirVars,
+  elixirComparisonOperators,
   jsCase,
   jsChaining,
   jsDestructuring,
@@ -22,6 +23,7 @@ import {
   jsMap,
   jsReduce,
   jsVars,
+  jsComparisonOperators,
 } from "../codeSamples";
 import CodeComparison from "../components/CodeComparison/CodeComparison";
 import CodeComparisonDescription from "../components/CodeComparison/CodeComparisonDescription";
@@ -45,10 +47,10 @@ export default function Home() {
           content="Tools and examples to help a Javascript developer learn Elixir"
         />
       </Head>
-      <main className="m-auto p-4 max-w-4xl flex flex-col h-screen">
+      <main className="flex flex-col h-screen max-w-4xl p-4 m-auto">
         <Header />
         <div className="flex-grow mb-10">
-          <p className="text-xl mt-4">
+          <p className="mt-4 text-xl">
             Expand a section to learn about a particular topic.
           </p>
           <Collabsible title="Basics" startsOpen>
@@ -64,6 +66,11 @@ export default function Home() {
                 Unlike JS, all elixir data is immutable and must be assigned a
                 value at the time the variable is declared.
               </CodeComparisonDescription>
+              <CodeComparisonHeader>Comparison Operators</CodeComparisonHeader>
+              <CodeComparison
+                js={jsComparisonOperators}
+                elixir={elixirComparisonOperators}
+              />
               <CodeComparisonHeader>Imports</CodeComparisonHeader>
               <CodeComparison js={jsImports} elixir={elixirImports} />
               <CodeComparisonHeader>Functions</CodeComparisonHeader>
