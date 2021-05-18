@@ -18,18 +18,49 @@ export const elixirVars = `
 
 `;
 
+export const jsComparisonOperators = `
+ "hi" = "hi"   # Uncaught SyntaxError: Invalid left-hand side in assignment
+ "hi" == "hi"  # true
+ "hi" === "hi" # true
+
+`;
+
+export const elixirComparisonOperators = `
+ "hi" = "hi"
+ "hello" = "hi"   # ** (MatchError) no match of right hand side value: "hi"
+ "hi" == "hi"    # true
+ "hello" == "hi"  # false
+
+`;
+
 export const jsImports = `
  import React, { useState } from 'react';
+ import React as MyReact from 'react';
 
 `;
 
 export const elixirImports = `
  # in elixir, you can use a fully qualified name without importing,
  # or you can import like this:
- import MySuperSpecialProject.ThingIWantToImport
+ import MySuperSpecialProject.HelperModule
 
- # or if you only want certain functions from ThingIWantToImport:
- import MySuperSpecialProject.ThingIWantToImport, only: [my_function, 1]
+ # or alias HelperModule to avoid typing the fully qualified name when used
+ alias MySuperSpecialProject.HelperModule
+
+ # or if you only want to mixin certain functions into your module from
+ # HelperModule:
+ import MySuperSpecialProject.HelperModule, only: [my_function, 1]
+
+`;
+
+export const jsImportAliases = `
+ import React as MyReact from 'react';
+ import * as MyMap from 'mapbox-gl';
+
+`;
+
+export const elixirImportAliases = `
+ alias
 
 `;
 
@@ -54,7 +85,7 @@ export const elixirFunction = `
  defp private_add(n1, n2) do
   n1 + n2
  end
- 
+
 `;
 
 export const elixirMap = `
@@ -218,7 +249,7 @@ export const elixirIf = `
   n
  else
   100
- end 
+ end
 
  # ternary isn't really directly supported, but this version of
  # an if statement is one line and very easy to read
