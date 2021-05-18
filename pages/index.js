@@ -53,9 +53,14 @@ export default function Home() {
           </p>
           <Collabsible title="Basics" startsOpen>
             <>
-              <CodeComparisonHeader>Variable Declaration</CodeComparisonHeader>
+              <CodeComparisonHeader>
+                Variable Declaration (or binding)
+              </CodeComparisonHeader>
               <CodeComparison js={jsVars} elixir={elixirVars} />
               <CodeComparisonDescription>
+                "=" is called the match operator. The match operator is similar
+                to triple equals in Javascript.
+                <br />
                 Unlike JS, all elixir data is immutable and must be assigned a
                 value at the time the variable is declared.
               </CodeComparisonDescription>
