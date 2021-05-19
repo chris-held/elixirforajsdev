@@ -124,7 +124,7 @@ export const elixirFilter = `
 `;
 
 export const jsFilter = `
- const people = [{name: 'Bob', age: 30}, {nane: 'Bill', age: 18}];
+ const people = [{name: 'Bob', age: 30}, {name: 'Bill', age: 18}];
  const oldEnough = people.filter({age} => age > 21);
 
 `;
@@ -142,7 +142,7 @@ export const jsReduce = `
 `;
 
 export const jsChaining = `
- const people = [{name: 'Bob', age: 30}, {nane: 'Bill', age: 18}];
+ const people = [{name: 'Bob', age: 30}, {name: 'Bill', age: 18}];
  const filteredAndMapped = people.filter({age} => age > 21).map({name} => name);
 
  // ['Bob']
@@ -188,9 +188,9 @@ export const jsDestructuring2 = `
 `;
 
 export const elixirDestructuring = `
- o = %{ nested: %{ prop: "Hi!" }}
+ o = %{nested: %{prop: "Hi!"}}
 
- %{ nested: %{ prop: prop }} = o
+ %{nested: %{prop: prop}} = o
 
  IO.inspect(prop)
 
@@ -201,12 +201,12 @@ export const elixirDestructuring = `
 export const elixirDestructuring2 = `
  # if the user passed in is an admin, this
  # function will be called
- defp list( %{ is_admin = true } ) do
+ defp list(%{is_admin: true}) do
   store.list_all()
  end
 
  # regular users have this function called
- defp list( user ) do
+ defp list(user) do
   store.list_for_user(user)
  end
 
@@ -230,12 +230,12 @@ export const elixirCase = `
  # to match on the results of a function. In this
  # example get_a_response returns a tuple where the
  # first element is the status
- case get_a_repoonse do
-  { :ok, _ } ->
+ case get_a_response do
+  {:ok, _} ->
     "Success"
-  { :error, %{ reason = "Unauthorized" } } ->
+  {:error, %{reason = "Unauthorized"}} ->
     "Not Allowed"
-  { :error, _ } ->
+  {:error, _} ->
     "There was an error"
  end
 
