@@ -1,5 +1,6 @@
 import Head from "next/head";
 import {
+  elixirConventions,
   elixirCase,
   elixirChaining,
   elixirDestructuring,
@@ -12,6 +13,7 @@ import {
   elixirReduce,
   elixirVars,
   elixirComparisonOperators,
+  jsConventions,
   jsCase,
   jsChaining,
   jsDestructuring,
@@ -55,6 +57,8 @@ export default function Home() {
           </p>
           <Collabsible title="Basics" startsOpen>
             <>
+              <CodeComparisonHeader>Code Conventions</CodeComparisonHeader>
+              <CodeComparison js={jsConventions} elixir={elixirConventions} />
               <CodeComparisonHeader>
                 Variable Declaration (or binding)
               </CodeComparisonHeader>

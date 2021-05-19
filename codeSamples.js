@@ -1,6 +1,24 @@
 // code samples that aren't one liners can go here to
 // keep other parts of the app clean
 
+export const jsConventions = `
+ // camelCasing
+ const welcomeStatement = "Welcome to Elixir for JS Devs"
+ const welcomeStatement = () => {
+   return "Welcome to Elixir for JS Devs"
+ }
+
+`;
+
+export const elixirConventions = `
+ # snake_cased
+ welcome_statement = "Welcome to Elixir for JS Devs"
+ def welcome_statement do
+  "Welcome to Elixir for JS Devs"
+ end
+
+`;
+
 export const jsVars = `
  const foo = 1;
  let bar = 2;
