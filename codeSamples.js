@@ -233,9 +233,22 @@ export const elixirCase = `
  case get_a_response do
   {:ok, _} ->
     "Success"
+
   {:error, %{reason = "Unauthorized"}} ->
     "Not Allowed"
+
   {:error, _} ->
+    "There was an error"
+ end
+
+ cond do
+  foo == "foo" ->
+    "Success"
+
+  bar < 1 ->
+    "Not Allowed"
+
+  _ ->
     "There was an error"
  end
 
