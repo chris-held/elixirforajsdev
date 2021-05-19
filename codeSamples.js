@@ -1,10 +1,31 @@
 // code samples that aren't one liners can go here to
 // keep other parts of the app clean
 
+export const jsConventions = `
+ // camelCasing
+ const welcomeStatement = "Welcome to Elixir for JS Devs"
+ const welcomeStatement = () => {
+   return "Welcome to Elixir for JS Devs"
+ }
+
+`;
+
+export const elixirConventions = `
+ # snake_cased
+ welcome_statement = "Welcome to Elixir for JS Devs"
+ def welcome_statement do
+  "Welcome to Elixir for JS Devs"
+ end
+
+`;
+
 export const jsVars = `
  const foo = 1;
  let bar = 2;
  var baz = 3;
+
+ # Export constants for reuse and to avoid duplication
+ export const FOO = 1;
 
 `;
 
@@ -15,6 +36,18 @@ export const elixirVars = `
  # they are often used to express status
  :ok
  :error
+
+ # Declare module attributes for similar purposes as constant exports in JS
+ defmodule MySuperSpecialProject do
+   @foo 1
+ end
+
+ # Note that module attribute values are computed at compile time so assigning
+ # the return value of a function call to a module attribute will remain that
+ # value once compiled.
+ defmodule MySuperSpecialProject do
+   @foo DateTime.utc_now()
+ end
 
 `;
 
@@ -109,7 +142,7 @@ export const elixirFilter = `
 `;
 
 export const jsFilter = `
- const people = [{name: 'Bob', age: 30}, {nane: 'Bill', age: 18}];
+ const people = [{name: 'Bob', age: 30}, {name: 'Bill', age: 18}];
  const oldEnough = people.filter({age} => age > 21);
 
 `;
@@ -127,7 +160,7 @@ export const jsReduce = `
 `;
 
 export const jsChaining = `
- const people = [{name: 'Bob', age: 30}, {nane: 'Bill', age: 18}];
+ const people = [{name: 'Bob', age: 30}, {name: 'Bill', age: 18}];
  const filteredAndMapped = people.filter({age} => age > 21).map({name} => name);
 
  // ['Bob']
@@ -173,9 +206,9 @@ export const jsDestructuring2 = `
 `;
 
 export const elixirDestructuring = `
- o = %{ nested: %{ prop: "Hi!" }}
+ o = %{nested: %{prop: "Hi!"}}
 
- %{ nested: %{ prop: prop }} = o
+ %{nested: %{prop: prop}} = o
 
  IO.inspect(prop)
 
@@ -186,12 +219,12 @@ export const elixirDestructuring = `
 export const elixirDestructuring2 = `
  # if the user passed in is an admin, this
  # function will be called
- defp list( %{ is_admin = true } ) do
+ defp list(%{is_admin: true}) do
   store.list_all()
  end
 
  # regular users have this function called
- defp list( user ) do
+ defp list(user) do
   store.list_for_user(user)
  end
 
@@ -215,12 +248,25 @@ export const elixirCase = `
  # to match on the results of a function. In this
  # example get_a_response returns a tuple where the
  # first element is the status
- case get_a_repoonse do
-  { :ok, _ } ->
+ case get_a_response do
+  {:ok, _} ->
     "Success"
-  { :error, %{ reason = "Unauthorized" } } ->
+
+  {:error, %{reason = "Unauthorized"}} ->
     "Not Allowed"
-  { :error, _ } ->
+
+  {:error, _} ->
+    "There was an error"
+ end
+
+ cond do
+  foo == "foo" ->
+    "Success"
+
+  bar < 1 ->
+    "Not Allowed"
+
+  _ ->
     "There was an error"
  end
 
