@@ -6,6 +6,9 @@ export const jsVars = `
  let bar = 2;
  var baz = 3;
 
+ # Export constants for reuse and to avoid duplication
+ export const FOO = 1;
+
 `;
 
 export const elixirVars = `
@@ -15,6 +18,18 @@ export const elixirVars = `
  # they are often used to express status
  :ok
  :error
+
+ # Declare module attributes for similar purposes as constant exports in JS
+ defmodule MySuperSpecialProject do
+   @foo 1
+ end
+
+ # Note that module attribute values are computed at compile time so assigning
+ # the return value of a function call to a module attribute will remain that
+ # value once compiled.
+ defmodule MySuperSpecialProject do
+   @foo DateTime.utc_now()
+ end
 
 `;
 
