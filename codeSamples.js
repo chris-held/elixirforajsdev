@@ -24,7 +24,7 @@ export const jsVars = `
  let bar = 2;
  var baz = 3;
 
- # Export constants for reuse and to avoid duplication
+ // Export constants for reuse and to avoid duplication
  export const FOO = 1;
 
 `;
